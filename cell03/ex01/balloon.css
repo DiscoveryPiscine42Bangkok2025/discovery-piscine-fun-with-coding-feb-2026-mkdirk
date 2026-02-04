@@ -1,0 +1,19 @@
+body {
+    margin: 0;          
+    display: flex;       
+    justify-content: center; 
+    align-items: center;     
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.container {
+    display: flex;
+    background-color: red;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    cursor: pointer;
+}

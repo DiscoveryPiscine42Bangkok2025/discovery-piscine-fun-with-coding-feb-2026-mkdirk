@@ -1,0 +1,62 @@
+body {
+    margin: 0;          
+    display: flex;       
+    justify-content: center; 
+    align-items: center;     
+    min-height: 100vh;
+    flex-direction: column;
+}
+
+.container {  
+    background-color: white;
+    width: 220px;
+    height: 500px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; 
+    justify-content: flex-start; 
+    align-items: center;     
+    gap: 20px;
+    border-radius: 20px;
+}
+
+.social {
+    max-width: 200px;
+    max-height: 100px;
+}
+
+h1, p {
+    color: #333;
+    font-family: sans-serif;
+}
+
+.contact {
+    /* 1. ทรงปุ่มและสี */
+    background-color: #4facfe; /* สีฟ้าสดใส */
+    color: white;              /* สีตัวอักษร */
+    padding: 12px 30px;        /* ขนาดปุ่ม (บน-ล่าง, ซ้าย-ขวา) */
+    border: none;              /* เอาขอบเส้นๆ ออก */
+    border-radius: 25px;       /* ทำปุ่มมนๆ แบบแคปซูล */
+    
+    /* 2. ตัวอักษร */
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;           /* เปลี่ยนเมาส์เป็นรูปมือเวลาชี้ */
+    
+    /* 3. เพิ่ม Animation เวลาเปลี่ยนสี */
+    transition: all 0.3s ease;
+    
+    margin-top: 10px;          /* ระยะห่างจากชื่อด้านบน */
+}
+
+/* --- เอฟเฟกต์เวลาเอาเมาส์ไปวาง (Hover) --- */
+.contact:hover {
+    background-color: #0088ff; /* เปลี่ยนสีให้เข้มขึ้น */
+    transform: translateY(-3px); /* ให้ปุ่มลอยขึ้นนิดนึง */
+    box-shadow: 0 5px 15px rgba(0, 136, 255, 0.4); /* เพิ่มเงาสีฟ้าให้ปุ่มดูเรืองแสง */
+}
+
+/* --- เอฟเฟกต์เวลาคลิก (Active) --- */
+.contact:active {
+    transform: translateY(-1px); /* กดลงไปนิดนึงเวลาคลิก */
+}

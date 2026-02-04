@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Basic Calculator</title>
+</head>
+<body>
+    <input type="text" id="left" placeholder="Left value">
+    <select id="operator">
+        <option value="+">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+        <option value="%">%</option>
+    </select>
+    <input type="text" id="right" placeholder="Right value">
+    <input type="submit" value="Try me!" onclick="calculate()">
+    <script>
+        function calculate() {
+            let left = document.getElementById("left").value;
+            let right = document.getElementById("right").value;
+            let operator = document.getElementById("operator").value;
+
+            let a = Number(left);
+            let b = Number(right);
+
+            if (
+                left === "" || right === "" ||
+                !Number.isInteger(a) || !Number.isInteger(b) ||
+                a < 0 || b < 0
+            ) {
+                alert("Error :(");
+                return;
+            }
+
+            if ((operator === "/" || operator === "%") && b === 0) {
+                alert("It’s over 9000!");
+                console.log("It’s over 9000!");
+                return;
+            }
+
+            let result;
+
+            switch (operator) {
+                case "+":
+                    result = a + b;
+                    break;
+                case "-":
+                    result = a - b;
+                    break;
+                case "*":
+                    result = a * b;
+                    break;
+                case "/":
+                    result = a / b;
+                    break;
+                case "%":
+                    result = a % b;
+                    break;
+            }
+
+            alert(result);
+            console.log(result);
+        }
+
+        setInterval(function () {
+            alert("Please, use me...");
+        }, 30000);
+    </script>
+
+</body>
+</html>
