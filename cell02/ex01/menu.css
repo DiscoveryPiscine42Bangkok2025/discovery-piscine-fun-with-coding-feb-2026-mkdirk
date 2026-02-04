@@ -1,0 +1,90 @@
+/* ล้างค่าพื้นฐาน */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f0f2f5;
+}
+
+.sncf-nav {
+    background-color: #0055a4; 
+    display: flex;
+    justify-content: center;
+}
+
+.main-menu {
+    list-style: none;
+    display: flex;
+}
+
+.main-menu > li > a {
+    display: block;
+    padding: 20px 30px;
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background 0.3s;
+}
+
+.main-menu > li:hover > a {
+    background-color: #e60000; 
+}
+
+.dropdown {
+    position: relative;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%; 
+    left: 0;
+    background-color: white;
+    min-width: 180px;
+    list-style: none;
+    box-shadow: 0px 8px 15px rgba(0,0,0,0.1);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    overflow: hidden;
+}
+
+.submenu li a {
+    display: block;
+    padding: 12px 20px;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #eee;
+    transition: background 0.2s;
+}
+
+.submenu li a:hover {
+    background-color: #f8f9fa;
+    color: #0055a4;
+    padding-left: 25px; 
+}
+
+.dropdown:hover .submenu {
+    display: block;
+    animation: slideIn 0.3s ease;
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.content {
+    text-align: center;
+    padding: 100px 20px;
+    color: #444;
+}
