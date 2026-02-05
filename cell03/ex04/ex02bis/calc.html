@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>It's over 9000</title>
+
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<input type="text" id="left">
+<select id="op">
+	<option value="+">+</option>
+	<option value="-">-</option>
+	<option value="*">*</option>
+	<option value="/">/</option>
+	<option value="%">%</option>
+</select>
+<input type="text" id="right">
+
+<input type="submit" id="try" value="Try me!">
+
+<script>
+$(document).ready(function () {
+
+	$("#try").on("click", function () {
+		let left = $("#left").val();
+		let right = $("#right").val();
+		let op = $("#op").val();
+
+		// ตรวจว่าเป็น integer >= 0
+		if (!isValid(left) || !isValid(right)) {
+			alert("Error :(");
+			return;
+		}
+
+		left = parseInt(left);
+		right = parseInt(right);
+
+		if ((op === "/" || op === "%") && right === 0) {
+			alert("It's over 9000!");
+			console.log("It's over 9000!");
+			return;
+		}
+
+		let result;
+		switch (op) {
+			case "+": result = left + right; break;
+			case "-": result = left - right; break;
+			case "*": result = left * right; break;
+			case "/": result = left / right; break;
+			case "%": result = left % right; break;
+		}
+
+		alert(result);
+		console.log(result);
+	});
+
+	// alert ทุก 30 วินาที
+	setInterval(function () {
+		alert("Please, use me...");
+	}, 30000);
+
+});
+
+function isValid(value) {
+	return /^\d+$/.test(value);
+}
+</script>
+
+</body>
+</html>

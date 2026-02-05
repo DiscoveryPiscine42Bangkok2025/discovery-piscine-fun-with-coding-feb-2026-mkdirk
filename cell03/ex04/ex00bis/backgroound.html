@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Background</title>
+
+	<link rel="stylesheet" href="backgroound.css">
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<button id="btn">Click me!</button>
+
+<script>
+$(document).ready(function () {
+
+	$("#btn").on("click", function () {
+		let color = getRandomColor();
+		$("body").css("background-color", color);
+	});
+
+	function getRandomColor() {
+		let colors = ["green", "maroon", "blue", "yellow", "purple"];
+		let index = Math.floor(Math.random() * colors.length);
+		return colors[index];
+	}
+
+});
+</script>
+
+
+</body>
+</html>
